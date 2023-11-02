@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Button = ({ text }) => {
   const buttonClass =
-    "py-2 lg:py-4 px-4 lg:px-12 bg-red-600 text-white font-poppins text-[0.5rem] lg:text-base font-medium";
+    "py-2 lg:py-4 px-4 lg:px-12 bg-red-600 text-white font-poppins text-[0.6rem] lg:text-base font-medium";
 
   return (
     <>
