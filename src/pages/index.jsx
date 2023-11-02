@@ -1,0 +1,13 @@
+export { default as About } from "./About.jsx";
+export { default as Account } from "./Account.jsx";
+export { default as Cart } from "./Cart.jsx";
+export { default as CheckOut } from "./CheckOut.jsx";
+export { default as Contact } from "./Contact.jsx";
+export { default as Error } from "./Error.jsx";
+export { default as Home } from "./Home.jsx";
+export { default as Login } from "./Login.jsx";
+export { default as ProductDetail } from "./ProductDetail.jsx";
+export { default as SignUp } from "./SignUp.jsx";
+export { default as Wishlist } from "./Wishlist.jsx";
+export { default as AllProducts } from "./AllProducts.jsx";
+export { default as Catagory } from "./Catagory.jsx";
