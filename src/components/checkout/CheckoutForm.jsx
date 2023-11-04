@@ -3,7 +3,7 @@ const CheckoutForm = () => {
   const inputClass = "rounded bg-searchInput outline-0 py-2 px-4 mb-8 w-full";
 
   return (
-    <div className="w-[30rem]">
+    <div className="w-96 md:w-[30rem] mx-auto lg:mx-0">
       <label htmlFor="firstname" className={labelClass}>
         Firstname
       </label>

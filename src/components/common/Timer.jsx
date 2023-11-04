@@ -6,10 +6,10 @@ const Timer = () => {
   const [timer, setTimer] = useState({});
 
   const titleClass =
-    "font-poppins text-[0.5rem] md:text-[0.6rem] lg:text-xs font-medium";
-  const dotsClass = "text-red-500 text-lg md:text-xl lg:text-3xl font-black";
+    "font-poppins text-xs md:text-sm lg:text-xs font-medium text-center";
+  const dotsClass = "text-red-500 text-lg md:text-xl lg:text-3xl font-black text-center";
   const timerClass =
-    "font-inter text-xl md:text-2xl lg:text-4xl font-bold tracking-widest";
+    "font-inter text-xl md:text-2xl lg:text-4xl font-bold tracking-widest text-center";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +33,7 @@ const Timer = () => {
           {timer.hours < 10 ? "0" + timer.hours : timer.hours}
         </p>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-end">
         <p className={dotsClass}>:</p>
       </div>
       <div>
@@ -42,7 +42,7 @@ const Timer = () => {
           {timer.minutes < 10 ? "0" + timer.minutes : timer.minutes}
         </p>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-end">
         <p className={dotsClass}>:</p>
       </div>
       <div>

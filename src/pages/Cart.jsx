@@ -12,7 +12,7 @@ import {
 
 const Cart = () => {
   const tableRowClass =
-    "flex justify-between gap-3 py-6 px-2 md:px-10 rounded shadow mb-10";
+    "flex justify-between gap-3 py-6 px-2 md:px-6 lg:px-10 rounded shadow mb-10";
 
   const cart = useSelector(selectAll);
   const { cartTotalAmount } = useSelector((state) => state.cart);

@@ -15,7 +15,7 @@ const TodaySale = () => {
   if (isLoading) {
     content = <div>Loading...</div>;
   } else if (isSuccess) {
-    content = products.map((p) => <Card p={p} key={p.id} discount={1} />);
+    content = products.map((p) => <Card  p={p} key={p.id} discount={1} />);
   } else if (isError) {
     content = <div>{error}</div>;
   }
@@ -27,7 +27,7 @@ const TodaySale = () => {
         <div className="flex justify-between">
           <div className="flex gap-20">
             <div className="flex items-end">
-              <p className="font-inter text-base md:text-4xl font-semibold tracking-widest">
+              <p className="font-inter text-lg md:text-2xl lg:text-4xl font-semibold tracking-widest">
                 Flash Sales
               </p>
             </div>
@@ -35,7 +35,7 @@ const TodaySale = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10 w-full whitespace-nowrap overflow-x-scroll snap-x">
+      <div className="mt-10 w-full whitespace-nowrap overflow-x-scroll snap-x scroll-m-2">
         {content}
       </div>
       <div className="flex justify-center my-16">

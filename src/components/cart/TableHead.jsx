@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const TableHead = ({ tableRowClass }) => {
-  const textClass = "font-poppins font-medium text-xs md:text-base";
+  const textClass = "font-poppins font-medium text-xs md:text-sm lg:text-base";
 
   return (
     <thead>

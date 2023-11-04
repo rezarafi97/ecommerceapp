@@ -43,7 +43,7 @@ const CardWishlist = ({ p, discount }) => {
     content = null;
   }
   return (
-    <div className="h-96 w-64 inline-block md:mr-6 overflow-hidden rounded snap-center mx-auto">
+    <div className="h-96 w-64 inline-block md:mr-6 overflow-hidden rounded snap-center mx-4 my-4 shadow">
       <div className="w-full h-2/3 relative mb-4 group">
         {content}
         <div className="absolute top-3 right-3">

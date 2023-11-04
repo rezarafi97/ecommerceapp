@@ -8,7 +8,7 @@ import {
 } from "../../features/reducers/cartSlice";
 
 const TableBody = ({ tableRowClass, cart }) => {
-  const textClass = "font-poppins font-normal text-xs md:text-base";
+  const textClass = "font-poppins font-normal text-xs md:text-sm lg:text-base";
   
   const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ const TableBody = ({ tableRowClass, cart }) => {
         <tr key={item.id} className={tableRowClass}>
           <td className="w-20 lg:w-40 flex items-center gap-5">
             <img src={item.image} className="w-8" />
-            <p className="truncate font-poppins font-normal text-xs md:text-base">
+            <p className="truncate font-poppins font-normal text-xs md:text-sm lg:text-base">
               {item.title}
             </p>
           </td>
@@ -55,7 +55,7 @@ const TableBody = ({ tableRowClass, cart }) => {
           <td className="flex gap-4 w-20 lg:w-40 place-self-center">
             <p className={textClass}>{item.price * item.cartQty}$</p>
             <p
-              className="text-xs md:text-base text-red-900 font-black cursor-pointer"
+              className="text-xs md:text-sm lg:text-base text-red-900 font-black cursor-pointer"
               onClick={() => handleRemoveFromCart(item)}
             >
               X

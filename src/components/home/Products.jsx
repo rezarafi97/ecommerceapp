@@ -29,15 +29,15 @@ const Products = () => {
   }
 
   return (
-    <div>
+    <div className="mb-20">
       <Title title="Our Products" />
       <div className="mb-16">
-        <p className="font-inter text-base md:text-4xl font-semibold tracking-widest">
+        <p className="font-inter text-lg md:text-2xl lg:text-4xl font-semibold tracking-widest">
           Explore Our Products
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">{content}</div>
-      <div className="flex justify-center my-16">
+      <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">{content}</div>
+      <div className="flex justify-center my-8 md:my-12 lg:my-16">
         <Button text="All Products" />
       </div>
     </div>

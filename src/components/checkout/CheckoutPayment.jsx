@@ -18,7 +18,7 @@ const CheckoutPayment = () => {
   }, [cart, dispatch]);
 
   return (
-    <div className="mt-12">
+    <div className="mt-12 w-96 lg:w-60 mx-auto lg:mx-0">
       {cart.map((item) => (
         <div key={item.id} className="flex items-center mb-8">
           <img src={item.image} className="w-12" />

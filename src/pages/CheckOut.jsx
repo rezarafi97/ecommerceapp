@@ -11,7 +11,7 @@ const CheckOut = () => {
       <h2 className="font-inter text-4xl font-medium tracking-widest mb-12">
         Billing Details
       </h2>
-      <form className="2xl:flex justify-between ">
+      <form className="lg:flex justify-between ">
         <CheckoutForm />
 
         <CheckoutPayment />

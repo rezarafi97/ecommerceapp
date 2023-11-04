@@ -6,7 +6,7 @@ const ContactForm = () => {
     "w-full resize-none my-8 rounded bg-searchInput p-4 outline-0 placeholder:font-poppins placeholder:text-xs placeholder:align-baseline placeholder:opacity-50";
 
   const buttonClass =
-    "absolute right-0 px-12 py-4 bg-red-600 font-poppins text-base font-medium text-white";
+    "absolute right-0 md:-bottom-8 lg:-bottom-24 py-2 md:py-3 lg:py-4 px-6 md:px-[2.25rem] lg:px-12 font-poppins text-xs md:text-sm lg:text-base font-medium bg-red-600 text-white";
 
   return (
     <div className="px-8 pt-10 pb-12 rounded shadow w-full xl:w-3/4">

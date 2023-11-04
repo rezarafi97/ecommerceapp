@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const CartLink = () => {
   const linkClass =
-    "py-2 lg:py-4 px-6 lg:px-12 rounded border border-black border-opacity-50 font-poppins text-xs lg:text-base font-medium";
+    "py-2 md:py-3 lg:py-4 px-6 md:px-[2.25rem] lg:px-12 rounded border border-black border-opacity-50 font-poppins text-xs md:text-sm lg:text-base font-medium";
 
   return (
     <div className="flex justify-between mb-20">

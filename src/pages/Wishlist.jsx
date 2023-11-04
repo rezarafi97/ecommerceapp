@@ -43,9 +43,11 @@ const Wishlist = () => {
         </button>
       </div>
 
+      <div className="mt-8 flex justify-center flex-wrap">
       {wishlist.map((p) => (
         <CardWishlist p={p} discount={3} key={p.id} />
       ))}
+      </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const Advantage = ({ icon, title, desc }) => {
           {icon}
         </div>
       </div>
-      <p className="font-poppins text-sm lg:text-xl font-semibold mb-2">{title}</p>
+      <p className="font-poppins text-xs md:text-sm lg:text-base font-semibold mb-2">{title}</p>
       <p className="font-poppins text-xs lg:text-sm font-normal">{desc}</p>
     </div>
   );
