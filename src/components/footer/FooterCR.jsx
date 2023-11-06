@@ -1,4 +1,5 @@
 const FooterCR = () => {
+  const textClass = "text-white font-poppins text-sm font-normal opacity-40"
   return (
     <div className="flex basis-0 gap-4 justify-center py-2">
       <span className="w-2 h-2 opacity-40">
@@ -25,7 +26,7 @@ const FooterCR = () => {
           />
         </svg>
       </span>
-      <p className="text-white font-poppins text-sm font-normal opacity-40">Copyright 2023. All right reserved</p>
+      <p className={textClass}>Copyright 2023. All right reserved</p>
     </div>
   );
 };

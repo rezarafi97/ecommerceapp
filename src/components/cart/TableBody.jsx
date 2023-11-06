@@ -30,7 +30,7 @@ const TableBody = ({ tableRowClass, cart }) => {
         <tr key={item.id} className={tableRowClass}>
           <td className="w-20 lg:w-40 flex items-center gap-5">
             <img src={item.image} className="w-8" />
-            <p className="truncate font-poppins font-normal text-xs md:text-sm lg:text-base">
+            <p className={`truncate ${textClass}`}>
               {item.title}
             </p>
           </td>

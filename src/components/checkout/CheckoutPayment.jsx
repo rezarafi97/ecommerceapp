@@ -22,7 +22,7 @@ const CheckoutPayment = () => {
       {cart.map((item) => (
         <div key={item.id} className="flex items-center mb-8">
           <img src={item.image} className="w-12" />
-          <p className="font-poppins text-base font-normal ml-6 mr-52">
+          <p className={`${textClass} ml-6 mr-52`}>
             {item.title}
           </p>
           <p className={textClass}>{item.price * item.cartQty}$</p>
