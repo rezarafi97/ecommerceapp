@@ -9,9 +9,14 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../features/reducers/cartSlice";
 import { removeFromWishlist } from "../features/reducers/wishlistSlice";
 
+import { selectLogin } from "../features/reducers/userSlice";
+import { useNavigate } from "react-router-dom";
+
 const Wishlist = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  const log = useSelector(selectLogin);
   const wishlist = useSelector(selectWishlist);
 
   const handleAddToCart = (item) => {
@@ -21,6 +26,13 @@ const Wishlist = () => {
   const handleRemoveFromWishlist = (item) => {
     dispatch(removeFromWishlist(item));
   };
+
+  useEffect(() => {
+    if (!log) {
+      navigate("/login");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -44,9 +56,9 @@ const Wishlist = () => {
       </div>
 
       <div className="mt-8 flex justify-center flex-wrap">
-      {wishlist.map((p) => (
-        <CardWishlist p={p} discount={3} key={p.id} />
-      ))}
+        {wishlist.map((p) => (
+          <CardWishlist p={p} discount={3} key={p.id} />
+        ))}
       </div>
     </div>
   );

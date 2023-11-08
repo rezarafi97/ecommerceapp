@@ -1,27 +1,34 @@
 import { useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 
 import { getTotals, selectAll } from "../features/reducers/cartSlice";
-import {
-  TableHead,
-  TableBody,
-  CartLink,
-  CartTotal,
-} from "../components/cart";
+import { TableHead, TableBody, CartLink, CartTotal } from "../components/cart";
+
+import { selectLogin } from "../features/reducers/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const log = useSelector(selectLogin);
+  const cart = useSelector(selectAll);
+  const { cartTotalAmount } = useSelector((state) => state.cart);
+
   const tableRowClass =
     "flex justify-between gap-3 py-6 px-2 md:px-6 lg:px-10 rounded shadow mb-10";
 
-  const cart = useSelector(selectAll);
-  const { cartTotalAmount } = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!log) {
+      navigate("/login");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     dispatch(getTotals());
   }, [cart, dispatch]);
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);

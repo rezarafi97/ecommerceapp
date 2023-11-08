@@ -4,24 +4,39 @@ import { BsSuitHeart, BsSuitHeartFill, BsEye } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../features/reducers/cartSlice";
 
-import { selectWishlistById, addToWishlist } from "../../features/reducers/wishlistSlice";
-import { Link } from "react-router-dom";
+import {
+  selectWishlistById,
+  addToWishlist,
+} from "../../features/reducers/wishlistSlice";
+import { Link, useNavigate } from "react-router-dom";
 
+import { selectLogin } from "../../features/reducers/userSlice";
 
 const Card = ({ p, discount }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const wishlist = useSelector((state) => selectWishlistById(state, p.id));
+  const log = useSelector(selectLogin);
+
   const badgeClass = "font-poppins text-white text-xs font-normal";
   const buttonClass =
     "group-hover:opacity-100 opacity-0 w-full h-10 absolute bottom-0 inset-x-0 bg-black text-white font-poppins text-base font-medium rounded-b transition duration-500 ease-in-out";
 
-  const dispatch = useDispatch();
-  const wishlist = useSelector((state) => selectWishlistById(state, p.id));
-
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+    if (log) {
+      dispatch(addToCart(item));
+    } else {
+      navigate("/login");
+    }
   };
 
   const handleAddToWishlist = (item) => {
-    dispatch(addToWishlist(item));
+    if (log) {
+      dispatch(addToWishlist(item));
+    } else {
+      navigate("/login");
+    }
   };
 
   let content;

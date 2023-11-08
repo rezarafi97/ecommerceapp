@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const CartTotal = ({ cartTotalAmount }) => {
+
   const subClass =
     "flex justify-between border-b border-black border-opacity-40 pb-4 mb-4";
   const linkClass =
