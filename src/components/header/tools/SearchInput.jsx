@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { useGetAllProductsQuery } from "../../../features/api/apiSlice";
+
 import { Link } from "react-router-dom";
+import { useDebouncedCallback } from "use-debounce";
 
 const SearchInput = () => {
   const [query, setQuery] = useState("");
+
+  const handleSearch = useDebouncedCallback((q) => {
+    setQuery(q);
+  }, 300);
 
   const {
     data: products = [],
@@ -54,19 +60,21 @@ const SearchInput = () => {
   const inputClass =
     "flex-auto bg-searchInput outline-none placeholder:font-poppins placeholder:text-xs placeholder:align-baseline placeholder:opacity-50 rounded py-2 pl-5 pr-3";
   const resultClass =
-    "absolute right-1 top-10 bg-black opacity-40 w-96 rounded flex flex-col py-4 px-6 justify-center items-start gap-3 z-10";
+    "absolute right-1 top-10 bg-black bg-opacity-40 w-96 rounded flex flex-col py-4 px-6 justify-center items-start gap-3 z-10";
 
   return (
     <div className="hidden md:block">
       <div className="relative">
-      <input
-        type="search"
-        className={inputClass}
-        placeholder="What are you looking for?"
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      {query ? <div className={resultClass}>{content}</div> : null}
-    </div>
+        <input
+          type="search"
+          className={inputClass}
+          placeholder="What are you looking for?"
+          onChange={(e) => {
+            handleSearch(e.target.value);
+          }}
+        />
+        {query ? <div className={resultClass}>{content}</div> : null}
+      </div>
     </div>
   );
 };
