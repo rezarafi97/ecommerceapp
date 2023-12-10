@@ -2,10 +2,12 @@ import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
 import { Drawer } from "@material-tailwind/react";
-import { CiCircleRemove, CiSearch } from "react-icons/ci";
+import { CiCircleRemove } from "react-icons/ci";
 
 import { Navlink } from "../common";
 import { useGetAllCategoriesQuery } from "../../features/api/apiSlice";
+
+import { SearchInput } from "./tools";
 
 const NavbarDrawer = ({ open, closeDrawer }) => {
   let location = useLocation();
@@ -14,9 +16,7 @@ const NavbarDrawer = ({ open, closeDrawer }) => {
   const normalLink = "";
   const navClass =
     "font-poppins xl:text-base lg:text-sm font-normal leading-normal mx-auto";
-  const inputClass =
-    "flex-auto bg-searchInput outline-none placeholder:font-poppins placeholder:text-xs placeholder:align-baseline placeholder:opacity-50";
-  const divClass = "flex flex-col justify-center items-center flex-grow gap-6"
+  const divClass = "flex flex-col justify-center items-center flex-grow gap-6";
 
   const {
     data: cate = [],
@@ -58,49 +58,46 @@ const NavbarDrawer = ({ open, closeDrawer }) => {
           </div>
 
           <div className={divClass}>
-            <Navlink
-              page="Home"
-              path=""
-              activeLink={activeLink}
-              normalLink={normalLink}
-              navClass={navClass}
-            />
-            <Navlink
-              page="Contact"
-              path="/contact"
-              activeLink={activeLink}
-              normalLink={normalLink}
-              navClass={navClass}
-            />
-            <Navlink
-              page="About"
-              path="/about"
-              activeLink={activeLink}
-              normalLink={normalLink}
-              navClass={navClass}
-            />
-            <Navlink
-              page="Sign Up"
-              path="/signup"
-              activeLink={activeLink}
-              normalLink={normalLink}
-              navClass={navClass}
-            />
-
-            <div className="flex md:hidden bg-searchInput rounded py-2 pl-5 pr-3 flex-auto">
-              <input
-                type="search"
-                className={inputClass}
-                placeholder="What are you looking for?"
+            <button type="button" onClick={closeDrawer}>
+              <Navlink
+                page="Home"
+                path=""
+                activeLink={activeLink}
+                normalLink={normalLink}
+                navClass={navClass}
               />
-              <button type="submit">
-                <CiSearch className="flex-auto w-6 h-6" />
-              </button>
-            </div>
+            </button>
+            <button type="button" onClick={closeDrawer}>
+              <Navlink
+                page="Contact"
+                path="/contact"
+                activeLink={activeLink}
+                normalLink={normalLink}
+                navClass={navClass}
+              />
+            </button>
+            <button type="button" onClick={closeDrawer}>
+              <Navlink
+                page="About"
+                path="/about"
+                activeLink={activeLink}
+                normalLink={normalLink}
+                navClass={navClass}
+              />
+            </button>
+            <button type="button" onClick={closeDrawer}>
+              <Navlink
+                page="Sign Up"
+                path="/signup"
+                activeLink={activeLink}
+                normalLink={normalLink}
+                navClass={navClass}
+              />
+            </button>
+            
+            <SearchInput />
 
-            <div className={divClass}>
-              {content}
-            </div>
+            <div className={divClass}>{content}</div>
           </div>
         </div>
       </Drawer>

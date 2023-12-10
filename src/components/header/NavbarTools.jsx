@@ -10,7 +10,9 @@ const NavbarTools = () => {
   return (
     <>
       <div className="flex gap-6">
-        <SearchInput />
+        <div className="hidden md:block">
+          <SearchInput />
+        </div>
 
         {location.pathname === "/signup" ||
         location.pathname === "/login" ? null : (
