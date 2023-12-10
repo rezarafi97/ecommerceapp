@@ -21,7 +21,7 @@ const Card = ({ p, discount }) => {
 
   const badgeClass = "font-poppins text-white text-xs font-normal";
   const buttonClass =
-    "group-hover:opacity-100 opacity-0 w-full h-10 absolute bottom-0 inset-x-0 bg-black text-white font-poppins text-base font-medium rounded-b transition duration-500 ease-in-out";
+    "group-hover:opacity-100 opacity-0 duration-500 ease-in-out w-full h-10 absolute bottom-0 inset-x-0 bg-black text-white font-poppins text-base font-medium rounded-b transition duration-500 ease-in-out";
 
   const handleAddToCart = (item) => {
     if (log) {
@@ -74,7 +74,7 @@ const Card = ({ p, discount }) => {
           </div>
           <BsEye className="w-6 h-6 mt-2" />
         </div>
-        <img src={p.image} className="w-1/2 h-1/2 absolute left-14 top-14" />
+        <img src={p.image} className="w-1/2 h-1/2 absolute left-14 top-14 group-hover:scale-110 duration-500 ease-in-out" />
         <button
           type="submit"
           className={buttonClass}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Button = ({ text }) => {
   const buttonClass =
-  "py-2 md:py-3 lg:py-4 px-6 md:px-[2.25rem] lg:px-12 font-poppins text-xs md:text-sm lg:text-base font-medium bg-red-600 text-white";
+  "py-2 md:py-3 lg:py-4 px-6 md:px-[2.25rem] lg:px-12 font-poppins text-xs md:text-sm lg:text-base font-medium bg-red-600 text-white hover:bg-white hover:text-red-600 duration-500 ease-in-out border border-red-600";
     
   return (
     <>

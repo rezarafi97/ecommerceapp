@@ -30,7 +30,7 @@ const Dropdown = ({ iconsClass, navigate }) => {
   const closeDrawer = () => setOpen(false);
 
   const dropdownClass =
-    "absolute right-1 top-10 bg-black opacity-40 rounded w-56 flex flex-col py-4 pl-6 justify-center items-start gap-3 z-10";
+    "absolute right-1 top-10 bg-black rounded w-56 flex flex-col py-4 pl-6 justify-center items-start gap-3 z-10 duration-500 ease-in-out";
   const dropdownMenuClass = "flex flex-auto gap-4 cursor-pointer";
 
   return (
@@ -43,8 +43,7 @@ const Dropdown = ({ iconsClass, navigate }) => {
         </Link>
       )}
 
-      {dropdown ? (
-        <div className={dropdownClass}>
+      <div className={`${dropdownClass} ${dropdown ? "opacity-40" : "opacity-0"}`}>
           <div
             className={dropdownMenuClass}
             onClick={() => {
@@ -81,7 +80,6 @@ const Dropdown = ({ iconsClass, navigate }) => {
             <p className="text-white">Log Out</p>
           </div>
         </div>
-      ) : null}
 
       <button
         type="button"

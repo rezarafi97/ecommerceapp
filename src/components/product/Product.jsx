@@ -25,7 +25,7 @@ const Product = ({ productId }) => {
     content = (
       <div className="w-full">
         <img
-          className="w-1/5 lg:w-1/2 absolute top-8 right-4"
+          className="w-1/5 lg:w-1/2 absolute top-8 right-4 hover:scale-110 duration-500 ease-in-out"
           src={product.image}
         />
         <div className="absolute bottom-12 lg:bottom-14 xl:bottom-16 left-2 md:left-4 lg:left-6">
