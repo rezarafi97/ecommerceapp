@@ -23,9 +23,9 @@ const MonthSale = () => {
   return (
     <div>
       <Title title="This Month" />
-      <div className="flex justify-between mb-16">
-        <div className="flex items-end">
-          <p className="font-inter text-lg md:text-2xl lg:text-4xl font-semibold tracking-widest">
+      <div className="flex mb-16">
+        <div className="flex items-end w-1/2">
+          <p className="font-inter text-sm sm:text-lg md:text-2xl lg:text-4xl font-semibold tracking-widest">
             Best Selling Products
           </p>
         </div>
